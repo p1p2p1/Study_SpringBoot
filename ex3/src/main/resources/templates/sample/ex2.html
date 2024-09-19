@@ -19,10 +19,16 @@
 <!--        <li th:each = "dto, state : ${list}" th:text = "${dto.sno % 5 == 0} ? ${dto.sno} : ${dto.first}">-->
 <!--        </li>-->
 <!--    </ul>-->
-        <ul>
-            <li th:each = "dto, state : ${list}" th:class = "${dto.sno % 5 == 0}?'target'" th:text = "${dto}">
+<!--        <ul>-->
+<!--            <li th:each = "dto, state : ${list}" th:class = "${dto.sno % 5 == 0}?'target'" th:text = "${dto}">-->
 
-            </li>
+<!--            </li>-->
+<!--        </ul>-->
+
+        <ul>
+            <th:block th:each="dto : ${list}">
+                <li th:text="${dto.sno % 5 == 0}?${dto.sno}:${dto.first}"></li>
+            </th:block>
         </ul>
 </body>
 </html>
